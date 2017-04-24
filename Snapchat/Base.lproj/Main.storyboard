@@ -81,15 +81,6 @@
         <scene sceneID="HAb-4g-XRp">
             <objects>
                 <viewController id="gsq-0Q-g9r" customClass="SnapsViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="n1R-ns-syR"/>
-                        <viewControllerLayoutGuide type="bottom" id="MCl-Jw-fTR"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="JG4-b0-uda">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
                     <navigationItem key="navigationItem" id="t95-3m-iWS">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="E0o-ap-WVP">
                             <connections>

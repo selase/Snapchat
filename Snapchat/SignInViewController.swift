@@ -8,6 +8,8 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
+import FirebaseStorage
 
 class SignInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
@@ -15,7 +17,9 @@ class SignInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup after loading the view, typically from a ni b.
+        
+        
     }
 
     @IBAction func turnUpTapped(_ sender: Any) {
@@ -31,15 +35,29 @@ class SignInViewController: UIViewController {
                     if error != nil {
                         print("We have an error creating user \(error!)")
                     }else{
-                        print("created user succeesfully")
+                        
+                        print("We Created user succeesfully")
+                        
+                        FIRDatabase.database().reference().child("users").child(user!.uid).child("email").setValue(user!.email!)
+                   
                         self.performSegue(withIdentifier: "signinsegue", sender: nil)
                     }
                 })
             }else{
-                print("We signed in successfully")
+                print("We signed in successfully: \(String(describing: user?.email))")
+                
                 self.performSegue(withIdentifier: "signinsegue", sender: nil)
             }
         })
+    }
+ 
+    
+    func getClassName(obj : AnyObject) -> String
+    {
+        let objectClass : AnyClass! = object_getClass(obj)
+        let className = objectClass.description()
+        
+        return className
     }
 
 
